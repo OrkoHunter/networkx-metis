@@ -1,0 +1,19 @@
+# Source files
+include src/GKlib/*.h
+include src/libmetis/*.h
+include src/LICENSE.txt
+
+# Wrapper files
+include _api.pxd
+include networkx/addons/metis/_metis.pyx
+include networkx/addons/metis/*.py
+include networkx/addons/metis/tests/*.py
+
+# Build files
+exclude _metis.c
+include networkx/addons/metis/_metis.so
+
+# Documentaion and License files
+include license.txt
+include README.md
+include NOTICE
