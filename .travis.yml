@@ -1,0 +1,22 @@
+language: python
+
+notifications:
+  email: false
+
+python:
+  - 2.7
+  - 3.2
+  - 3.3
+  - 3.4
+
+before_install:
+
+ - sudo apt-get update
+ - sudo apt-get install build-essential
+ - sudo apt-get install python3-setuptools python-setuptools
+
+install:
+
+ - pip install networkx
+ - pip install cython
+
