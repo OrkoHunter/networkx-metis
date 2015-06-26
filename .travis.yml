@@ -33,12 +33,18 @@ before_install:
 install:
 
  - if [[ "${TEST_PY3}" == "false" ]]; then
-       pip install networkx;
+       git clone https://github.com/orkohunter/networkx.git
+       cd networkx/
+       git checkout addons
+       python setup.py install
        pip install Cython;
    fi
 
  - if [[ "${TEST_PY3}" == "true" ]]; then
-       pip install networkx;
+       git clone https://github.com/orkohunter/networkx.git
+       cd networkx/
+       git checkout addons
+       python setup.py install
        pip install Cython;
    fi
 
