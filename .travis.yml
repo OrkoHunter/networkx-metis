@@ -9,14 +9,49 @@ python:
   - 3.3
   - 3.4
 
+matrix:
+  include:
+    - python: 2.7
+      env:
+        - TEST_PY3="false"
+    - python: 3.2
+      env:
+        - TEST_PY3="true"
+    - python: 3.3
+      env:
+        - TEST_PY3="true"
+    - python: 3.4
+      env:
+        - TEST_PY3="true"
+
+
 before_install:
 
  - sudo apt-get update
  - sudo apt-get install build-essential
- - sudo apt-get install python3-setuptools python-setuptools
 
 install:
 
- - pip install networkx
- - pip install cython
+ - if [[ "${TEST_PY3}" == "false" ]]; then
+       pip install networkx;
+       pip install Cython;
+   fi
 
+ - if [[ "${TEST_PY3}" == "true" ]]; then
+       pip install networkx;
+       pip install Cython;
+   fi
+
+script:
+
+ - if [[ "${TEST_PY3}" == "false" ]]; then
+       python setup.py install;
+       cd networkx/addons/metis
+       nosetests;
+   fi
+
+ - if [[ "${TEST_PY3}" == "true" ]]; then
+       cd networkx/addons/metis
+       python setup.py install;
+       nosetests;
+   fi

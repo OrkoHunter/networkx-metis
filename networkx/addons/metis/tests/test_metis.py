@@ -1,7 +1,7 @@
 import itertools
 import nose.tools
 
-import _metis
+import networkx.addons.metis._metis
 
 
 def make_cycle(n):
