@@ -30,7 +30,7 @@ ext_modules = cythonize([Extension('networkx.addons.metis._metis', ['*.pyx'],
                                    include_dirs=['src/GKlib', 'src/libmetis'],
                                    libraries=['metis', 'gklib'])])
 
-install_requires = ['decorator']
+install_requires = ['decorator', 'six']
 
 if sys.version_info[:2] < (3, 4):
     install_requires.append('enum34')
