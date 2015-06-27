@@ -1,9 +1,10 @@
+# Wrapper files
 graft networkx
 
 # Build files
 exclude _metis.c
 
 # Documentaion and License files
-include license.txt
+include LICENSE.txt
 include README.md
 include NOTICE
