@@ -2,6 +2,7 @@ import itertools
 import nose.tools
 
 import networkx.addons.metis._metis
+from networkx.addons.metis import types, exceptions
 
 
 def make_cycle(n):
@@ -73,7 +74,7 @@ class TestMetis(object):
         n = 16
         xadj, adjncy = make_cycle(n)
         options = types.MetisOptions(niter=-2)
-        nose.tools.assert_raises_regexp(types.MetisError,
+        nose.tools.assert_raises_regexp(exceptions.MetisError,
                                         'Input Error: Incorrect niter.',
                                         _metis.part_graph, xadj, adjncy, 2,
                                         options=options)
