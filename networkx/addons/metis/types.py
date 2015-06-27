@@ -248,7 +248,7 @@ class MetisOptions(object):
             contiginfo Display information related to the elimination of
                        connected components
             ========== ======================================================
-       """
+        """
         return self._dbglvl
 
     @dbglvl.setter
