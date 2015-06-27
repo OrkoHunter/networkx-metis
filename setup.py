@@ -57,7 +57,7 @@ if __name__ == "__main__":
 				'Programming Language :: Python :: 3.3',
 				'Programming Language :: Python :: 3.4',],
         packages           = ['networkx.addons.metis', 'networkx.addons', 'networkx'],
-        namespace_packages = ['networkx.addons', 'networkx'],
+        namespace_packages = ['networkx.addons.metis', 'networkx.addons', 'networkx'],
         libraries          = libraries,
         ext_modules        = ext_modules,
         install_requires   = install_requires

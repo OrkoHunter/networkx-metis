@@ -1,14 +1,5 @@
 language: python
 
-notifications:
-  email: false
-
-python:
-  - 2.7
-  - 3.2
-  - 3.3
-  - 3.4
-
 matrix:
   include:
     - python: 2.7
@@ -33,31 +24,30 @@ before_install:
 install:
 
  - if [[ "${TEST_PY3}" == "false" ]]; then
-       git clone https://github.com/orkohunter/networkx.git
-       cd networkx/
-       git checkout addons
-       python setup.py install
        pip install Cython;
-   fi
+       python setup.py install; # To install networkx-metis
+       mkdir core; # For the installation of networkx core
+       cd core;
+       git clone https://github.com/orkohunter/networkx.git;
+       cd networkx/;
+       git checkout addons;
+       python setup.py install;
+   fi;
 
  - if [[ "${TEST_PY3}" == "true" ]]; then
-       git clone https://github.com/orkohunter/networkx.git
-       cd networkx/
-       git checkout addons
-       python setup.py install
        pip install Cython;
-   fi
+       python setup.py install; # To install networkx-metis
+       mkdir core; # For the installation of networkx core
+       cd core;
+       git clone https://github.com/orkohunter/networkx.git;
+       cd networkx/;
+       git checkout addons;
+       python setup.py install;
+   fi;
 
 script:
 
- - if [[ "${TEST_PY3}" == "false" ]]; then
-       python setup.py install;
-       cd networkx/addons/metis
-       nosetests;
-   fi
+ - nosetests
 
- - if [[ "${TEST_PY3}" == "true" ]]; then
-       cd networkx/addons/metis
-       python setup.py install;
-       nosetests;
-   fi
+notifications:
+  email: false
