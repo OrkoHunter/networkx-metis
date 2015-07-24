@@ -302,3 +302,7 @@ intersphinx_mapping = {'https://docs.python.org/': None}
 default_role = 'math'
 # Load MathJax into the webpage by including its main JavaScript file into the page
 mathjax_path = 'https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML'
+
+# napoleon settings
+napoleon_include_private_with_doc = False
+napoleon_include_special_with_doc = True

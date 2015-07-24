@@ -2,8 +2,6 @@
 METIS Wrapper
 *************
 
-.. automodule:: nxmetis
-
 
 METIS
 -----
@@ -15,7 +13,6 @@ METIS
    node_nested_dissection
    partition
    vertex_separator
-   MetisOptions
 
 Enums
 -----
