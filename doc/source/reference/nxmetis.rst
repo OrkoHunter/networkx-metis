@@ -17,9 +17,7 @@ METIS
 Enums
 -----
 
-.. automodule:: nxmetis.enums
-.. autosummary::
-   :toctree: generated/
+.. toctree::
 
    MetisPType
    MetisObjType
@@ -28,7 +26,6 @@ Enums
    MetisRType
    MetisNumbering
    MetisDbgLvl
-   MetisRStatus
 
 Types
 -----
